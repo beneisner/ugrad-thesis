@@ -1,0 +1,1216 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"begin",
+				"\\begin{document}                                  \tlatex-document"
+			],
+			[
+				"pro",
+				"proposalFn"
+			],
+			[
+				"Time",
+				"Time\tstruct ʈ"
+			],
+			[
+				"debu",
+				"debugAppend\t ƒ"
+			],
+			[
+				"deb",
+				"debug\t ƒ"
+			],
+			[
+				"Spri",
+				"Sprintf\tstring ƒ"
+			],
+			[
+				"comm",
+				"commit\t ƒ"
+			],
+			[
+				"se",
+				"sendLogUpdate\t ƒ"
+			],
+			[
+				"Append",
+				"AppendEntriesReply\tstruct ʈ"
+			],
+			[
+				"timer",
+				"timerLoop\t ƒ"
+			],
+			[
+				"Timer",
+				"NewTimer\t*time.Timer ƒ"
+			],
+			[
+				"App",
+				"APPEND_ENTRIES\t Ɩ"
+			],
+			[
+				"Request",
+				"RequestVoteReply\tstruct ʈ"
+			],
+			[
+				"debug",
+				"debugElection\t ƒ"
+			],
+			[
+				"Requ",
+				"RequestVoteReply\tstruct ʈ"
+			],
+			[
+				"RequestVoteArg",
+				"RequestVoteArgsType\t Ɩ"
+			],
+			[
+				"func",
+				"func (*Raft)\tfunc (...) {...} ʂ"
+			],
+			[
+				"kill",
+				"kill\tchan bool ν"
+			],
+			[
+				"append",
+				"debugAppend\tbool ν"
+			],
+			[
+				"AppendEntr",
+				"AppendEntriesReply\tstruct ʈ"
+			],
+			[
+				"de",
+				"debug\t ƒ"
+			],
+			[
+				"updater",
+				"followerLogUpdater\t ƒ"
+			],
+			[
+				"ini",
+				"initializeLogUpdaters\t ƒ"
+			],
+			[
+				"Disp",
+				"dispatchKill\tchan bool ν"
+			],
+			[
+				"disp",
+				"dispatchKill\tchan bool ν"
+			],
+			[
+				"ki",
+				"dispatchKill\tchan bool ν"
+			],
+			[
+				"ch",
+				"updateChan\tchan bool ν"
+			],
+			[
+				"Ar",
+				"AppendEntriesArgs\tstruct ʈ"
+			],
+			[
+				"A",
+				"AppendEntriesArgs\tstruct ʈ"
+			],
+			[
+				"AppendEnr",
+				"AppendEntriesArgs\tstruct ʈ"
+			],
+			[
+				"l",
+				"LastLogIndex\tint ν"
+			],
+			[
+				"app",
+				"applyChan\tchan ApplyMsg ν"
+			],
+			[
+				"p",
+				"PrevLogTerm\tint ν"
+			],
+			[
+				"spri",
+				"Sprintf\tstring ƒ"
+			],
+			[
+				"appe",
+				"stopAppend\tchan bool ν"
+			],
+			[
+				"MinInt",
+				"MinInt32\t Ɩ"
+			],
+			[
+				"Min",
+				"MinInt64\t Ɩ"
+			],
+			[
+				"commit",
+				"commitIndex\tint ν"
+			],
+			[
+				"P",
+				"PrevLogTerm\tint ν"
+			],
+			[
+				"L",
+				"PrevLogTerm\tint ν"
+			],
+			[
+				"AppendE",
+				"AppendEntriesReply\tstruct ʈ"
+			],
+			[
+				"map",
+				"serverStateMap\tmap[ServerState]string ν"
+			],
+			[
+				"time",
+				"time\t package ρ"
+			],
+			[
+				"s",
+				"serverStateMap\tmap[ServerState]string ν"
+			],
+			[
+				"state",
+				"serverState\tServerState ν"
+			],
+			[
+				"st",
+				"serverState\tServerState ν"
+			],
+			[
+				"S",
+				"String\tstring ƒ"
+			],
+			[
+				"tie",
+				"timeout\ttime.Duration ν"
+			],
+			[
+				"leader",
+				"leaderHeartbeatDuration\ttime.Duration ν"
+			],
+			[
+				"Spr",
+				"Sprintf\tstring ƒ"
+			],
+			[
+				"spi",
+				"Sprintf\tstring ƒ"
+			],
+			[
+				"c",
+				"currentTerm\tint ν"
+			],
+			[
+				"Req",
+				"RequestVoteReply\tstruct ʈ"
+			],
+			[
+				"appendEnt",
+				"AppendEntriesReply\tstruct ʈ"
+			],
+			[
+				"send",
+				"sendRequestVote\tbool ƒ"
+			],
+			[
+				"vo",
+				"votedFor\tint ν"
+			],
+			[
+				"Reg",
+				"registerChannel\tchan string ν"
+			],
+			[
+				"print",
+				"Printf\tn int, err error ƒ"
+			],
+			[
+				"Letter",
+				"IsLetter\tbool ƒ"
+			],
+			[
+				"out",
+				"outputEncoder\t*json.Encoder ν"
+			],
+			[
+				"red",
+				"reduceTaskNumber\tint ν"
+			],
+			[
+				"job",
+				"jobName\tstring ν"
+			],
+			[
+				"find",
+				"find_barycenter\tfunction"
+			],
+			[
+				"rot",
+				"rotate_reference\tstatement"
+			],
+			[
+				"cy",
+				"cycle_complete"
+			],
+			[
+				"border",
+				"border-box"
+			],
+			[
+				"bor",
+				"border-box"
+			],
+			[
+				"For",
+				"FormatBool\tstring ƒ"
+			],
+			[
+				"SigningMethodR",
+				"SigningMethodRS512\t*jwt.SigningMethodRSA ν"
+			],
+			[
+				"O",
+				"ObjectIdHex\tbson.ObjectId ƒ"
+			],
+			[
+				"U",
+				"CheckUserId\t ƒ"
+			],
+			[
+				"ResponseWriter",
+				"NewCompressingResponseWriter\t*restful.CompressingResponseWriter, error ƒ"
+			],
+			[
+				"Respon",
+				"ResponseWriter\tinterface ¡"
+			],
+			[
+				"Resp",
+				"NewResponse\t*restful.Response ƒ"
+			],
+			[
+				"En",
+				"EnsureIndexKey\terror ƒ"
+			],
+			[
+				"checkIM",
+				"checkImageId\tbson.ObjectId, bool ƒ"
+			],
+			[
+				"No",
+				"Now\ttime.Time ƒ"
+			],
+			[
+				"D",
+				"DecodeString\t[]byte, error ƒ"
+			],
+			[
+				"Ima",
+				"ImageStorage\tstruct ʈ"
+			],
+			[
+				"I",
+				"func (*ImagePresenter)\tfunc (...) {...} ʂ"
+			],
+			[
+				"fun",
+				"func (*UserItemResource)\tfunc (...) {...} ʂ"
+			],
+			[
+				"Im",
+				"ImagePresenter\tstruct ʈ"
+			],
+			[
+				"Pa",
+				"ParseInt\ti int64, err error ƒ"
+			],
+			[
+				"Parse",
+				"ParseInt\ti int64, err error ƒ"
+			],
+			[
+				"NewIma",
+				"NewImageStorage\t*image.ImageStorage ƒ"
+			],
+			[
+				"Log",
+				"Logerr\t ƒ"
+			],
+			[
+				"Pr",
+				"Println\tn int, err error ƒ"
+			],
+			[
+				"sc",
+				"scaledJpeg\t*bytes.Buffer ν"
+			],
+			[
+				"B",
+				"NewBuffer\t*bytes.Buffer ƒ"
+			],
+			[
+				"Ne",
+				"NewReader\t*bytes.Reader ƒ"
+			],
+			[
+				"Prese",
+				"PresentWithOffer\t[]item.ItemPresenter ƒ"
+			],
+			[
+				"New",
+				"NewUserStorage\t*user.UserStorage ƒ"
+			],
+			[
+				"us",
+				"userStorage\t*user.UserStorage ν"
+			],
+			[
+				"get",
+				"GetItemsByUserId\t*[]Item ƒ"
+			],
+			[
+				"write",
+				"WriteError\terror ƒ"
+			],
+			[
+				"Status",
+				"StatusNotFound\t Ɩ"
+			],
+			[
+				"WriteErr",
+				"WriteErrorString\terror ƒ"
+			],
+			[
+				"Write",
+				"WriteEntity\terror ƒ"
+			],
+			[
+				"Par",
+				"ParseFloat\tf float64, err error ƒ"
+			],
+			[
+				"UserPre",
+				"func (*UserPresenter)\tfunc (...) {...} ʂ"
+			],
+			[
+				"Form",
+				"FormatFloat\tstring ƒ"
+			],
+			[
+				"par",
+				"ParseFloat\tf float64, err error ƒ"
+			],
+			[
+				"Ob",
+				"ObjectId\tstring ʈ"
+			],
+			[
+				"check",
+				"checkUserId\tbson.ObjectId, bool ƒ"
+			],
+			[
+				"Data",
+				"DataType\t*restful.Parameter ƒ"
+			],
+			[
+				"N",
+				"NewObjectId\tbson.ObjectId ƒ"
+			],
+			[
+				"d",
+				"TempDir\tstring ƒ"
+			],
+			[
+				"new",
+				"NewUserStorage\t*UserStorage ƒ"
+			],
+			[
+				"confi",
+				"configuration\tConfiguration ν"
+			],
+			[
+				"conf",
+				"configuration\tConfiguration ν"
+			],
+			[
+				"con",
+				"configuration\tConfiguration ν"
+			],
+			[
+				"g",
+				"getConfig\tConfiguration ƒ"
+			],
+			[
+				"format",
+				"format_result"
+			],
+			[
+				"UserR",
+				"func (*UserResource)\tfunc (...) {...} ʂ"
+			],
+			[
+				"su",
+				"success2\tbool ν"
+			],
+			[
+				"chec",
+				"checkUserId\tint, bool ƒ"
+			],
+			[
+				"Stat",
+				"StatusAccepted\t Ɩ"
+			],
+			[
+				"Us",
+				"func (*UserResource)\tfunc (...) {...} ʂ"
+			],
+			[
+				"User",
+				"func (*UserStorage)\tfunc (...) {...} ʂ"
+			],
+			[
+				"Cache",
+				"func (*Cache)\tfunc (...) {...} ʂ"
+			],
+			[
+				"Cach",
+				"func (*Cache)\tfunc (...) {...} ʂ"
+			],
+			[
+				"Item",
+				"func (*Item)\tfunc (...) {...} ʂ"
+			],
+			[
+				"imp",
+				"import\timport (...) ʂ"
+			],
+			[
+				"sN",
+				"sNums2"
+			],
+			[
+				"Ma",
+				"MAX_SIZE"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"font",
+				"font"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "thesis.tex",
+			"settings":
+			{
+				"buffer_size": 8041,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "jpaper.cls",
+			"settings":
+			{
+				"buffer_size": 6711,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					""
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Test"
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Install"
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Cross-Compile (Interactive)"
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/GoSublime/GoSublime.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Golang Build/Go.sublime-build",
+				"Test"
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 327.0,
+		"last_filter": "Insta",
+		"selected_items":
+		[
+			[
+				"Insta",
+				"Package Control: Install Package"
+			],
+			[
+				"La",
+				"LaTeXTools: Check system"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis"
+	],
+	"file_history":
+	[
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/.gitignore",
+		"/Users/Ben/Documents/Programming/seunglab/ssh-commands.txt",
+		"/Users/Ben/Library/Application Support/Sublime Text 3/Packages/GoSublime/CHANGELOG.md",
+		"/Users/Ben/Google Drive/Academics/Senior - Fall/ELE 477/Labs/Lab 4/Report/Report.tex",
+		"/Users/Ben/Documents/Programming/seunglab/trace/trace/isbi/evaluation/randerror.bsh",
+		"/Users/Ben/go/src/bitbucket.org/cos-418/src/kvraft/server.go",
+		"/Users/Ben/go/src/bitbucket.org/cos-418/src/kvraft/common.go",
+		"/Users/Ben/Documents/Programming/seunglab/trace/trace/isbi/evaluation/test.py",
+		"/Users/Ben/Google Drive/Academics/Freshman - Spring/COS 226/Assignment 8 - Burrows-Wheeler/MoveToFront.java",
+		"/Users/Ben/go/src/bitbucket.org/cos-418/src/kvraft/client.go",
+		"/Users/Ben/Downloads/raft/src/raft/raft.go",
+		"/Users/Ben/Documents/Programming/emoji/naga/shared/trainer.py",
+		"/Users/Ben/.tmux/.tmux.conf",
+		"/Users/Ben/Desktop/Keeping/Personal Stuff/LP.aup",
+		"/Users/Ben/Documents/Programming/seunglab/trace/trace/snemi3d/test-input.tif",
+		"/Users/Ben/Documents/Programming/seunglab/trace/trace/isbi/train-labels.tif",
+		"/Users/Ben/Google Drive/Academics/Freshman - Spring/COS 226/Assignment 7 - SeamCarver/SeamCarver.java",
+		"/Users/Ben/Documents/Programming/emoji2vec_public/data/training/train.txt",
+		"/Users/Ben/go/src/bitbucket.org/cos-418/src/raft/persister.go",
+		"/Users/Ben/Documents/Programming/seunglab/trace/run_train.sh",
+		"/Users/Ben/Documents/Programming/seunglab/trace/Dockerfile",
+		"/Users/Ben/Documents/Programming/beneisner.github.io/_config.yml",
+		"/Users/Ben/Documents/Programming/beneisner.github.io/_includes/sidebar.html",
+		"/Users/Ben/Documents/Programming/beneisner.github.io/_includes/head.html",
+		"/Users/Ben/Downloads/clockwork_safety_policy.tex",
+		"/Users/Ben/Downloads/common_map (1).go",
+		"/Users/Ben/go/src/bitbucket.org/cos-418/src/main/ii.go",
+		"/Users/Ben/go/src/bitbucket.org/cos-418/src/mapreduce/common_map.go",
+		"/Users/Ben/go/src/bitbucket.org/cos-418/src/mapreduce/common.go",
+		"/Users/Ben/go/src/bitbucket.org/cos-418/src/mapreduce/common_rpc.go",
+		"/usr/local/Cellar/go/1.7.1/libexec/src/net/rpc/client.go",
+		"/Users/Ben/Documents/cleaned_copy.csv",
+		"/Users/Ben/Documents/temp.txt",
+		"/Users/Ben/Documents/Programming/seunglab/trace/trace/thirdparty/neuroglancer/python/ext/src/on_demand_object_mesh_generator.cc",
+		"/Users/Ben/go/src/bitbucket.org/cos-418/main/wc.go",
+		"/Users/Ben/go/src/bitbucket.org/cos-418/mapreduce/common_map.go",
+		"/Users/Ben/go/src/bitbucket.org/cos-418/mapreduce/common.go",
+		"/Users/Ben/go/src/bitbucket.org/cos-418/main/mytest.txt",
+		"/Users/Ben/go/src/bitbucket.org/cos-418/main/mrtmp.wcseq",
+		"/Users/Ben/go/src/bitbucket.org/cos-418/main/mrtmp.wcseq-res-2",
+		"/Users/Ben/go/src/bitbucket.org/cos-418/main/mrtmp.wcseq-res-1",
+		"/Users/Ben/go/src/bitbucket.org/cos-418/main/mrtmp.wcseq-res-0",
+		"/Users/Ben/go/src/bitbucket.org/cos-418/mapreduce/mrtmp.test-0-0",
+		"/Users/Ben/Downloads/acl2016/acl2016.tex",
+		"/Users/Ben/Documents/Programming/go-rest-test/hello.go",
+		"/Users/Ben/Downloads/Twitter sentiment for 15 European languages/English_Twitter_sentiment.csv",
+		"/Users/Ben/Downloads/semeval2016-task6-domaincorpus (2)/download_tweets_api.py",
+		"/Users/Ben/Documents/Programming/3d_processing/Main.cpp",
+		"/Users/Ben/Downloads/eigenshape.m",
+		"/Users/Ben/Downloads/freeglut-3.0.0/README.cmake",
+		"/usr/local/Cellar/cmake/3.5.1/share/cmake/Modules/CMakeFindEclipseCDT4.cmake",
+		"/Users/Ben/get-pip.py",
+		"/Users/Ben/Downloads/word2vec/trunk/compute-accuracy.c",
+		"/Users/Ben/Downloads/word2vec/trunk/demo-phrase-accuracy.sh",
+		"/Users/Ben/Downloads/Untitled.bib",
+		"/Users/Ben/Documents/Programming/emoji/svg_conversion/text.svg",
+		"/Users/Ben/Documents/Programming/emoji/svg_conversion/svg/1f60a.svg",
+		"/Users/Ben/Downloads/tsne_python/tsne.py",
+		"/Users/Ben/Downloads/meshlab-code-6712-trunk/meshlab/src/meshlabplugins/filter_aging/filter_aging.cpp",
+		"/Users/Ben/Documents/Programming/emoji/models/model_k100_ep100_mb2.ckpt",
+		"/Users/Ben/Downloads/svg/1f3c2.svg",
+		"/Users/Ben/Documents/Programming/emoji/data/training/validation.txt",
+		"/Users/Ben/Documents/Programming/emoji/data/training/test.txt",
+		"/Users/Ben/Documents/Programming/emoji/data/training/shuffled.txt",
+		"/Users/Ben/Downloads/pure-layout-blog/index.html",
+		"/Users/Ben/Downloads/1f628.svg",
+		"/Users/Ben/Google Drive/Academics/Study Abroad/COMPM080/homespun/icp.py",
+		"/Users/Ben/Google Drive/Academics/Study Abroad/COMPM080/homespun/mesher.py",
+		"/Users/Ben/Google Drive/Academics/Study Abroad/COMPM080/homespun/icptest.py",
+		"/Users/Ben/Google Drive/Academics/Study Abroad/COMPM080/homespun/mesh.py",
+		"/Users/Ben/Google Drive/Academics/Study Abroad/COMPM080/homespun/canvas.py",
+		"/Users/Ben/Google Drive/Academics/Study Abroad/COMPM080/homespun/examples/new_ex.py",
+		"/Users/Ben/Google Drive/Academics/Study Abroad/COMPM080/homespun/examples/mesh_vis.py",
+		"/Users/Ben/Google Drive/Academics/Study Abroad/COMPM080/homespun/examples/cloud_display.py",
+		"/Users/Ben/Google Drive/Academics/Study Abroad/COMPM080/homespun/examples/new_cube.py",
+		"/Users/Ben/Google Drive/Academics/Study Abroad/COMPM080/homespun/lit_cube.py",
+		"/Users/Ben/Google Drive/Academics/Study Abroad/COMPM080/homespun/mol.py",
+		"/Users/Ben/Google Drive/Academics/Study Abroad/COMPM080/homespun/cube.py",
+		"/Users/Ben/Google Drive/Academics/Study Abroad/COMPM080/homespun/camera_exp.py",
+		"/Users/Ben/Google Drive/Academics/Study Abroad/COMPM080/homespun/v_test_donut.py",
+		"/Users/Ben/Google Drive/Academics/Study Abroad/COMPM080/homespun/v_test2.py",
+		"/Users/Ben/Downloads/sample.tex",
+		"/Users/Ben/Downloads/RandomForestClassifier.java",
+		"/Users/Ben/Google Drive/Academics/Junior - Fall/ELE 206/PUnC/myprog.vmh",
+		"/Volumes/~beisner/Assignment5/memorymap",
+		"/Volumes/~beisner/Assignment5/createdataA.c",
+		"/Users/Ben/Google Drive/Academics/Junior - Fall/ELE 206/simon/SimonDatapath.t.v",
+		"/Users/Ben/Google Drive/Academics/Junior - Fall/ELE 206/simon/SimonControl.v",
+		"/Users/Ben/Google Drive/Academics/Junior - Fall/ELE 206/simon/Memory.v",
+		"/Users/Ben/Documents/Programming/relationboat_meteor/client/relationboat_meteor.html",
+		"/Users/Ben/Documents/Programming/relationboat_meteor/relationboat_meteor.js",
+		"/Users/Ben/Documents/Programming/relationboat_meteor/relationboat_meteor.html",
+		"/Users/Ben/Documents/Programming/relationboat/relationboat/urls.py",
+		"/Users/Ben/Documents/Programming/relationboat/relationboat/settings.py",
+		"/Users/Ben/Documents/Programming/HP2015/faceApi.py",
+		"/Users/Ben/Documents/MATLAB/MAE 341/Assignment 2/Q5.m",
+		"/Users/Ben/Documents/MATLAB/MAE 341/Assignment 2/calculateOrbitalElementsRV.m",
+		"/Users/Ben/Documents/MATLAB/MAE 341/Assignment 2/Q3a.m",
+		"/Users/Ben/Documents/MATLAB/MAE 341/Assignment 2/Q4.m",
+		"/Users/Ben/Documents/MATLAB/MAE 341/Assignment 2/Q1.m",
+		"/Users/Ben/Documents/Programming/beneisner.github.io/index.html",
+		"/Users/Ben/Google Drive/Academics/Junior - Fall/ELE 206/lab3/Latch.t.v",
+		"/Users/Ben/Google Drive/Academics/Freshman - Fall/COS 126/Assignment 4/EditDistance.java",
+		"/Users/Ben/Documents/Programming/eth1-hackathon/src/Bot.java",
+		"/Users/Ben/Google Drive/Academics/Junior - Fall/ELE 206/lab0/SimpleCircuit.v",
+		"/Users/Ben/Google Drive/Academics/Junior - Fall/ELE 206/lab0/SimpleCircuit.t.v",
+		"/Volumes/beisner/Assignment1/decomment.c",
+		"/Users/Ben/Google Drive/Academics/Freshman - Spring/COS 226/Assignment 1 - Percolation/Percolation.java",
+		"/Users/Ben/Downloads/PS4Dualshock.plist",
+		"/Users/Ben/Documents/Programming/Parse Tutorial/Paws/Podfile",
+		"/Users/Ben/Google Drive/Academics/Sophomore - Spring/COS 340/Final/p1.tex",
+		"/Users/Ben/Google Drive/Academics/Sophomore - Spring/COS 340/Final/p5.tex",
+		"/Users/Ben/Google Drive/Academics/Sophomore - Spring/COS 340/Final/p2.tex",
+		"/Users/Ben/Google Drive/Academics/Sophomore - Spring/COS 340/Final/p4.tex",
+		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/api/user_item_resource.go",
+		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/user/user.go",
+		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/api/item_resource.go",
+		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/api/user_resource.go",
+		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/resources/scripts/build_server.sh",
+		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/.gitignore",
+		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/private.pem",
+		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/public.pem",
+		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/validate/validate.go",
+		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/resources/swagger/index.html",
+		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/resources/swagger/indexes/index.html",
+		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/private.rsa",
+		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/validate/public.pub",
+		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/image/image.go"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"raft.go",
+			"mapreduce/*.go",
+			"main/*.go",
+			"mapreduce/*.go",
+			"main/*.go",
+			"main/",
+			"mapreduce/",
+			"mapreduce/debug",
+			"",
+			"cleaned_copy.csv",
+			"temp.txt",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"N",
+			"S",
+			"E",
+			"Z",
+			"Y",
+			"M",
+			"K",
+			"A",
+			"C",
+			"D",
+			"S",
+			"q",
+			"subfloat",
+			"binaryProposal",
+			"panic",
+			"rf.persist",
+			"persist(",
+			"persist",
+			"mu.Lock",
+			"close",
+			"commit(",
+			"rf.commit(",
+			"rf.commit",
+			"println",
+			"%v",
+			"handleAppendEntries",
+			"startElection",
+			"AppendEntriesReply",
+			"handleAppendEntries",
+			"AppendEntries",
+			"panic(",
+			"rf.update",
+			"ConflictIndex =",
+			"sendLogUpdate",
+			"go ",
+			"cleanup",
+			"nextState = Leader",
+			"resetTimer",
+			"sendAppend",
+			"sendRe",
+			"FSMUpdate",
+			"MsgType",
+			"broadcastHeartbeat",
+			"leaderLoop",
+			"updateChan",
+			"persist",
+			"broadcastHe",
+			"AppendEntries",
+			"Updating commitIndex",
+			"TestRejo",
+			"rf.mu.Lock",
+			"genLogString",
+			"AppendEntries",
+			"rf.debug",
+			"rf.broad",
+			"go rf.bro",
+			"go rf.b",
+			"rf.votedFor =",
+			"rf.currentTerm =",
+			"Heartbeat",
+			"AppendEntriesReply",
+			"initiateElection",
+			"Adding an entry",
+			"broadcastHeartbeat",
+			"heartbeat",
+			"Adding an entry",
+			"rf.commitIndex",
+			"broadcastHeartbeat",
+			"Heartbeat",
+			"rf.nextIndex",
+			"nextIndex[server",
+			"nextIndex[i]",
+			"ConflictIndex",
+			"rf.nextIndex[",
+			"rf.nextIndex[server] =",
+			"nextIndex",
+			"agreement despite",
+			"maybeApply",
+			"rf.maybeApply()",
+			"rf.lastApplied",
+			"maybeApply",
+			"rf.maybeApply()",
+			"rf.commitIndex =",
+			"rf.commitIndex",
+			"rf.commitIndex =",
+			"commitIndex",
+			"initiateElection",
+			"rep.CurrentTerm",
+			"reply.CurrentTerm",
+			"Term is too low",
+			"rf.commitIndex",
+			"dispatch",
+			"commitIndex",
+			"AppendEntries",
+			"AppendEntriesArgs",
+			"wait",
+			"heartbeatChan",
+			"rf.currentTerm",
+			"followerLogUpdater",
+			"initializeDispatchers",
+			"rf.nextIndex",
+			"dispatchKill",
+			"logUpdateListener",
+			"AppendEntriesArgs",
+			"AppendEntries",
+			"AppendEntry",
+			"ApplyMs",
+			"apply error",
+			"loop",
+			"args.LastLogTerm",
+			"= make(",
+			"initializeDis",
+			"dispatchChans",
+			"apply error",
+			"heartbeatChan",
+			"Start",
+			"TOO",
+			"TOO DAMN",
+			"Applying entr",
+			"rf.log",
+			"rf.commit",
+			"commit(",
+			"rf.commit",
+			"commitIndex",
+			"stopAppend",
+			"COMMITTED",
+			"commit(",
+			"COMMITTING at index"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"debug",
+			"",
+			"\\n",
+			"",
+			"\\n",
+			" ",
+			"",
+			"s",
+			"Logerr",
+			"Command_lexLine",
+			"Command_synLine",
+			"Command_newToken",
+			"Command_freeTokens",
+			"Command_printTokens",
+			"STATE_IN_STRING",
+			"TOKEN_STRING",
+			"HeapMgr_removeFromFree",
+			"C.gen_random",
+			"D.gen_key_random",
+			" in",
+			"in",
+			"1",
+			"Needle",
+			"Haystack",
+			"needle",
+			"haystack",
+			"prefix",
+			"line",
+			"ch2",
+			"ch1",
+			"putchar",
+			"cCurrent",
+			",",
+			"AdminApiPanelNew",
+			"energyDistance.length",
+			"energyDistance[0].length",
+			"energy[0].length",
+			"energy.length",
+			",",
+			" % ",
+			"% ",
+			"for (",
+			"while (",
+			"if (",
+			"Iterator",
+			"for (",
+			"if (",
+			"integerQueue",
+			"for (",
+			"if (",
+			"while (",
+			"for (",
+			"if (",
+			"long"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "thesis.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8041,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								142,
+								142
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "jpaper.cls",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 6711,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/TeX.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.9o:///Users/Ben/go/src/bitbucket.org/cos-418/src/raft":
+	{
+		"height": 100.0
+	},
+	"output.GoSublime-main-output":
+	{
+		"height": 100.0
+	},
+	"output.GsDoc-output-output":
+	{
+		"height": 100.0
+	},
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.golang_build":
+	{
+		"height": 180.0
+	},
+	"output.latextools":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "",
+	"project": "thesis.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Google Drive/Code Challenge/Spotify/test.txt"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 144.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

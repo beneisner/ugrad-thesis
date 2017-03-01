@@ -1,0 +1,48 @@
+\documentclass[pageno]{sty/jpaper}
+
+\newif\ifdraft
+
+% Comment this out once the draft is complete.
+\drafttrue
+
+\ifdraft
+	\newcommand{\IWreport}{2016-2017 [DRAFT]}
+\else
+	\newcommand{\IWreport}{2016-2017}
+\fi
+
+\newcommand{\quotes}[1]{``#1''}
+
+\widowpenalty=9999
+\usepackage[normalem]{ulem}
+
+\begin{document}
+
+\title{
+Exploring CNN Architectures for EM Segmentation}
+
+\author{Benjamin Eisner\\Adviser: Sebastian Seung}
+
+\date{}
+\maketitle
+
+\thispagestyle{empty}
+\doublespacing
+\begin{abstract}
+Sample abstract
+\end{abstract}
+
+\input{tex/intro}
+\input{tex/background}
+\input{tex/approach}
+\input{tex/implementation}
+\input{tex/evaluation}
+\input{tex/summary}
+
+
+\bstctlcite{bstctl:etal, bstctl:nodash, bstctl:simpurl}
+\bibliographystyle{IEEEtranS}
+\bibliography{references}
+
+\end{document}
+
