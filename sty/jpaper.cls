@@ -81,8 +81,8 @@
 \newcommand{\abstractspacing}{\normalspacing}
 \renewcommand{\abstractnamefont}{\normalfont\large\bfseries}
 \renewcommand{\abstracttextfont}{\normalfont\itshape\abstractspacing}
-\setlength{\absleftindent}{0in}
-\setlength{\absrightindent}{0in}
+\setlength{\absleftindent}{1in}
+\setlength{\absrightindent}{1in}
 \setlength{\abstitleskip}{-1.5em}
 
 % Compress vertical space around section and subsection headings. Make

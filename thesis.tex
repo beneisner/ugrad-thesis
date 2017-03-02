@@ -1,5 +1,9 @@
 \documentclass[pageno]{sty/jpaper}
 
+\usepackage{color}
+
+\newcommand{\TODO}[1]{\textbf{TODO}: \textcolor{red}{#1}}
+
 \newif\ifdraft
 
 % Comment this out once the draft is complete.
@@ -27,22 +31,32 @@ Exploring CNN Architectures for EM Segmentation}
 \maketitle
 
 \thispagestyle{empty}
-\doublespacing
+% \doublespacing
 \begin{abstract}
-Sample abstract
+\textbf{NOTE}: As per the \href{https://www.cs.princeton.edu/ugrad/independent-work/important-steps-and-deadlines#Draft_Paper}{Princeton Computer Science Thesis Timeline}, the intent of this document is to serve as an outline for the final paper, and a plan for the remaining work to be done. Most of the components outlined with bullet points in the final sections are coded up and executed, but the results have not yet been visualized in a way suitable for print.
+
+This section will serve as a placeholder for the final abstract, to be submitted with the final paper. 
 \end{abstract}
 
-\input{tex/intro}
-\input{tex/background}
-\input{tex/approach}
-\input{tex/implementation}
-\input{tex/evaluation}
-\input{tex/summary}
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+
+\input{tex/1-intro}
+\input{tex/2-background}
+\input{tex/3-models}
+\input{tex/4-implementation}
+\input{tex/5-training}
+\input{tex/6-evaluation}
+\input{tex/7-results}
+\input{tex/8-conclusion}
 
 
 \bstctlcite{bstctl:etal, bstctl:nodash, bstctl:simpurl}
 \bibliographystyle{IEEEtranS}
-\bibliography{references}
+\bibliography{references,SeungLab}
 
 \end{document}
 
