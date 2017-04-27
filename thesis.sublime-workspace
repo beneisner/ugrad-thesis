@@ -4,8 +4,24 @@
 		"selected_items":
 		[
 			[
+				"end",
+				"\\end{}                                            \tlatex-document"
+			],
+			[
+				"usepakage",
+				"\\usepackage{package}                              \tlatex-document"
+			],
+			[
+				"hspace",
+				"\\hspace{length}                                   \tlatex-document"
+			],
+			[
 				"begin",
-				"\\begin{document}                                  \tlatex-document"
+				"\\begin{figure}[placement]                         \tlatex-document"
+			],
+			[
+				"tabl",
+				"\\tableofcontents                                  \tlatex-document"
 			],
 			[
 				"pro",
@@ -498,44 +514,11 @@
 			[
 				"sN",
 				"sNums2"
-			],
-			[
-				"Ma",
-				"MAX_SIZE"
-			],
-			[
-				"padd",
-				"padding-bottom"
-			],
-			[
-				"backg",
-				"background-color"
-			],
-			[
-				"font",
-				"font"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "thesis.tex",
-			"settings":
-			{
-				"buffer_size": 8041,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "jpaper.cls",
-			"settings":
-			{
-				"buffer_size": 6711,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
 	"build_system_choices":
@@ -628,17 +611,17 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 327.0,
-		"last_filter": "Insta",
+		"height": 392.0,
+		"last_filter": "La",
 		"selected_items":
 		[
 			[
-				"Insta",
-				"Package Control: Install Package"
-			],
-			[
 				"La",
 				"LaTeXTools: Check system"
+			],
+			[
+				"Insta",
+				"Package Control: Install Package"
 			],
 			[
 				"pack",
@@ -679,11 +662,35 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis"
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/img",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/sty",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/tex"
 	],
 	"file_history":
 	[
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/tex/results.tex",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/tex/evaluation.tex",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/tex/implementation.tex",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/tex/background.tex",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/tex/intro.tex",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/tex/7-results.tex",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/tex/6-evaluation.tex",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/tex/5-training.tex",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/tex/8-conclusion.tex",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/tex/3-models.tex",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/tex/4-implementation.tex",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/sty/jpaper.cls",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/thesis.tex",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/tex/datasets.tex",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/tex/summary.tex",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/tex/approach.tex",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/references.bib",
 		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/.gitignore",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/thesis.sublime-project",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/jpaper.cls",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/sty/abstract.sty",
+		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/sty/titling.sty",
 		"/Users/Ben/Documents/Programming/seunglab/ssh-commands.txt",
 		"/Users/Ben/Library/Application Support/Sublime Text 3/Packages/GoSublime/CHANGELOG.md",
 		"/Users/Ben/Google Drive/Academics/Senior - Fall/ELE 477/Labs/Lab 4/Report/Report.tex",
@@ -789,32 +796,11 @@
 		"/Users/Ben/Documents/Programming/eth1-hackathon/src/Bot.java",
 		"/Users/Ben/Google Drive/Academics/Junior - Fall/ELE 206/lab0/SimpleCircuit.v",
 		"/Users/Ben/Google Drive/Academics/Junior - Fall/ELE 206/lab0/SimpleCircuit.t.v",
-		"/Volumes/beisner/Assignment1/decomment.c",
-		"/Users/Ben/Google Drive/Academics/Freshman - Spring/COS 226/Assignment 1 - Percolation/Percolation.java",
-		"/Users/Ben/Downloads/PS4Dualshock.plist",
-		"/Users/Ben/Documents/Programming/Parse Tutorial/Paws/Podfile",
-		"/Users/Ben/Google Drive/Academics/Sophomore - Spring/COS 340/Final/p1.tex",
-		"/Users/Ben/Google Drive/Academics/Sophomore - Spring/COS 340/Final/p5.tex",
-		"/Users/Ben/Google Drive/Academics/Sophomore - Spring/COS 340/Final/p2.tex",
-		"/Users/Ben/Google Drive/Academics/Sophomore - Spring/COS 340/Final/p4.tex",
-		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/api/user_item_resource.go",
-		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/user/user.go",
-		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/api/item_resource.go",
-		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/api/user_resource.go",
-		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/resources/scripts/build_server.sh",
-		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/.gitignore",
-		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/private.pem",
-		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/public.pem",
-		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/validate/validate.go",
-		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/resources/swagger/index.html",
-		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/resources/swagger/indexes/index.html",
-		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/private.rsa",
-		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/validate/public.pub",
-		"/Users/Ben/go/src/github.com/PrincetonOBO/OBOBackend/image/image.go"
+		"/Volumes/beisner/Assignment1/decomment.c"
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -840,6 +826,15 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"TODO",
+			"Droposphi",
+			"\\IWreport",
+			"\\IWrep",
+			"jpg",
+			"graphicx",
+			"sty",
+			"IEEEtranS",
+			"sty",
 			"N",
 			"S",
 			"E",
@@ -958,16 +953,7 @@
 			"Start",
 			"TOO",
 			"TOO DAMN",
-			"Applying entr",
-			"rf.log",
-			"rf.commit",
-			"commit(",
-			"rf.commit",
-			"commitIndex",
-			"stopAppend",
-			"COMMITTED",
-			"commit(",
-			"COMMITTING at index"
+			"Applying entr"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1039,67 +1025,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "thesis.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8041,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								142,
-								142
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "jpaper.cls",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 6711,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/TeX.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
