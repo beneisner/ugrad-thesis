@@ -1,19 +1,19 @@
-\section{Introduction}
+\chapter{Introduction}
 
-\subsection{Overview}
+\section{Overview}
 
 In the field of computational neuroscience, there exist a class of problems relating to mapping the neuron-level structure of the brain. For instance, one might want to precisely model the neural connectivity of an abnormal mouse brain, or observe the connectivity and topology of a worm at different stages of its development. Conventionally, the structure of the brain is inferred from images, whether they are thin slices of a brain imaged with an electron microscope, volumetric images acquired using digital radiograhpy systems (i.e. fMRI, CAT, etc), or visible-spectrum video of exposed brain tissue. Although these imaging technique generate information at different resolution levels, they invariably present a huge data problem: when researchers are presented with small-scale image data, it is fundamentally infeasible to efficiently infer the connectivity and structure of a small cluster of neurons by hand, let alone an entire brain or nervous system, simply because the amount of neurons in a brain is too large.
 
 Many attempts have been made to automate the process of inferring connectivity and topology from images using various algorithmic and machine learning models. In the past five years or so, many of the most successful attempts at this class of problems have utilized Convolutional Neural Networks (CNNs) to achieve their high performance. The goal of this year-long project is to explore many of the different CNN-based approaches that have gained recognition in the past few years in several sub-problems, evaluate their performance and enumerate their deficiencies, and attempt to design new architectures that achieve improved performance in these sub-problems. In addition to increasing performance on established benchmarks, we also make contributions on new sub-problems for which there are no established benchmarks.
 
-\subsection{Sub-Problems}
+\section{Sub-Problems}
 
 The motivation for the research in this field is to better understand the connectivity of neural tissue. Since this is such a broad goal, it stands to reason that there a number of intermediary sub-problems that can be tackled to learn about connectivity. Several of the sub-problems have been heavily studied, and various public competitions have been organized that provide labeled training data and unlabled test data, encouraging competitors to achieve maximum performance against a certain benchmark. As we developed our models, we submitted their predictions to several of these open competitions, often performing well.
 
 % Get rid of this eventually
 \medskip
 
-\subsubsection*{2D Boundary Detection for EM Images}
+\subsection*{2D Boundary Detection for EM Images}
 
 One of the more established problems in the field is 2D Boundary Detection. The problem statement is such: given a 2-dimensional single-channel (i.e. greyscale) image of neural tissue taken with an electron microscope, produce an image that labels the boundaries of all the distinct cells in the image. An example of this boundary-detection task can be found in Figure \ref{fig:isbi_example}. This task is made particularly difficult by the existence of organelles with well-defined borders, as well as blood vessels and structured interstitial tissue.
 
@@ -31,7 +31,7 @@ One prominent competition that evaluates performance on this sort of task is the
 % Get rid of this eventually
 \medskip
 
-\subsubsection*{3D Segmentation for EM Volumes}
+\subsection*{3D Segmentation for EM Volumes}
 
 More recently, the sub-problem of automatic 3D Segmentation has emerged as a popular research area. This sub-problem is formulated as such: given a stack of 2-dimensional EM images generated that represent a 3-dimensional volume of tissue (i.e. the images were taken of successive physical slices of tissue), produce a segementation\footnote{A segmentation of an image or a stack of images is defined as producing a label for each pixel in the image or stack of images, where each unique label corresponds to a discrete object in the physical volume.} of the set of images that uniquely labels each discrete entity in the original volume. That is, if a tissue volume contains a neuron that passes vertically through several different slices, then the portions of each slice through which the neuron passes would be labeled with the same identifier. This problem is significantly more complicated than the boundary prediction problem stated before, because it requires an awareness of context in 3 dimensions, rather than 2. Additionally, most EM datasets are anisotropic, meaning that the resolution is not uniform in all directions (specifically, the z-direction perpendicular to the plane of each image is generally dilated). An example of a segmentation can be found in Figure \ref{fig:snemi3d_example}.
 
@@ -53,7 +53,7 @@ The Circuit Reconstruction from Electron Microscopy Images (CREMI) Challenge is 
 % Get rid of this eventually
 \medskip
 
-\subsubsection*{Image Realignment}
+\subsection*{Image Realignment}
 
 One major hurdle in inferring neural structure from EM images is that the image acquisition process is inherently noisy. While the EM imaging technologies used for the creation of neuron images (typically TEM) are quite stable, there is often variance in sample preparation techniques, resulting in all sorts of distortions and errors at imaging time. One particular type of error, image misalignment, occurs during the slicing of sample tissue, when some physical factor causes a resulting slice to be warped or translated in such a way that the resulting stack of images is misaligned. Intuitively, this means that every point in one EM slice data does not necessarily map to the point directly below it the neighboring slice. An example of slice misalignment can be visualized in Figure \ref{fig:misalignment_example}.
 

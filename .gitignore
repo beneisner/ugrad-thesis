@@ -118,4 +118,7 @@ out/
 # It's in my google drive, so there are some Icons
 Icon*
 
+._*
+.DS_Store
+
 
