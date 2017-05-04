@@ -1,0 +1,132 @@
+\chapter{The \texttt{DeepSeg} Framework}
+So far we have discussed the theoretical computational concepts that underpin the EM segmentation pipeline, and realized that there are many nuanced computational steps that flow into one another during the segmentation of an EM volume. Given the algorithmic intricacy of the computational tasks, it stands to reason that any software implementation of the computational tasks will be large and complex. Conventional wisdom holds that a large and complicated software package is anathema to a researcher attempting to experiment with, augment, and improve upon the techniques implemented in that software package. Repeatability of experiments is also critical to a researcher retaining his or her sanity, so a pipeline that is completely automatic and is completely specified by a consolidated set of parameters is critical.
+
+As our research group started building and modifying software to experiment with different stages of the segmentation pipeline, it became painfully obvious that as our codebase grew in size and complexity, it was becoming increasingly difficult to alter the software without making major modifications across the codebase. So, in order to avert collective anguish we decided to design a framework - which we tentatively have named \texttt{DeepSeg} - with the following set of goals:
+
+\begin{itemize}
+	\item to create a set of abstractions and interfaces that allow researchers to modify or swap-out different components with minimal software-level impacts on the functionality of other portions of the pipeline.
+	\item to define abstractions for model development that are succinct and use domain-knowledge about the problem to automatically connect to sampling mechanisms during the training process. 
+	\item to be completely portable accross different machines and host environments, and to automatically integrate with installed GPU hardware for training acceleration.
+\end{itemize}
+
+On the technical level, the DeepSeg is written in \texttt{Python} (with some \texttt{Julia} and \texttt{C++} tools), and uses the \texttt{NumPy} package to represent and manipulate data throughout the pipeline. All of the machine-learning components, particularly for model definition and training, are built on top of the TensorFlow, Google's popular, open-source deep learning framework. This was chosen because of its ease of use with \texttt{Python}, its flexibility, and its automatic integration with GPUs via \texttt{CUDA}.
+
+In the following subsections, we will describe the abstractions introduced in the DeepSeg framework, and some of the underlying implementation details of these abstractions.
+
+\section{Overview}
+
+The driving concept behind the design of the system is being able to specify the entire pipeline in one place. This includes specifying all dataset handling, preprocessing, image transformation, and postprocessing procedures and parameters. Additionally, for any components that require learning or optimization, training parameters and inference specification are explicitly required. Because every non-parameter component in the specified pipeline must adhere to specific interfaces (i.e. dataset samplers must provide data samples of a specific size), components can be freely swapped out in the specification with the knowledge not only that the pipeline will execute, but the only meaningful difference in execution will occur at the altered component.
+
+In terms of functionality, the framework provides both training and inference for a specified pipeline. The training process automatically hooks into \texttt{TensorBoard}, the \texttt{TensorFlow} training visualization tool, in order to monitor training progress. The pipeline can automatically load trained models for inference tasks, and supports exporting into formats accepted by various EM segmentation competitions.
+
+\section{Pipeline Specification}
+
+A pipeline can be completely specified with a set of parameter classes:
+
+\begin{itemize}
+\item \texttt{PipelineConfig}: The main configuration class, which contains all other sets of parameters, as well as which models are used, where to find datafiles, and where to save results.
+\item \texttt{TrainingParams}: The set of parameters used in a training process, including learning rate, optimizer, patch sample sizes, and batch sizes.
+\item \texttt{AugmentationConfig}: A set of booleans determining which augmentations to use when sampling the dataset.
+\item \texttt{InferenceParams}: The set of parameters used when performing inference, including how to assemble predictions on large images from smaller predictions.
+\end{itemize}
+
+A \texttt{PipelineConfig} object is passed to the \texttt{Learner} class, where all the relevant componenets are connected.
+
+\section{Handling Diverse Datasets and Label Types}
+
+Currently, the framework supports several different datasets out of the box: the ISBI 2012 EM boundary-detection dataset, the ISBI 2013 SNEMI3D EM segmentation dataset, and all the datasets provided by the CREMI 2016 EM segmentation challenge. Prediction preparation tools are available to reformat the predictions on test sets for submission to their respective leaderboards. The framework also supports arbitrary EM datasets of any reasonable size,\footnote{Any dataset that fits in RAM.} and supports label inputs as segmentations, boundaries, 2D affinities, and 3D affinities.
+
+Raw datasets are wrapped by classes that implement the \texttt{Dataset} interface (i.e. \texttt{CREMIDataset}, \texttt{SNEMI3DDataset}, and \texttt{ISBIDataset}).
+
+
+\section{Dataset Sampling}
+
+The framework provides several different modes for sampling a specified dataset during training or inference. For training, random samples of arbitrary shape can be sampled, to which specified augmentations are applied. For inference, entire validation and test sets can be sampled in formats that are appropration for feeding into the pipeline.
+
+\subsection{Augmentation}
+
+The framework supports several type of random augmentation:
+
+\begin{itemize}
+	\item Rotation: the entire stack can be rotated by a random angle.
+	\item Flipping: the entire stack can be randomly mirrored along the x, y, or z axis.
+	\item Blurring: individual slices within a stack can be arbitrarily blurred.
+	\item Warping: individual slices can be warped via elastic deformation, to simulate data that is structurally different from the underlying dataset.
+\end{itemize}
+
+All augmentations are parameterized within certain bounds. Additional augmentations could theoretically be added to the pipeline with ease.
+
+Sampling is primarily configured and executed by the \texttt{EMSampler} class.
+
+\subsection{Parallelization}
+
+For multi-core training environments, the framework parallelizes the sampling procedure, executing data sampling on multiple cores and adding the samples to a data queue, which can be sampled at each training step. This considerably speeds up training time when using GPUs, especially when the timing of the augmentation procedure is non negligible with respect to the timing of an optimization step.
+
+\section{Preprocessing}
+
+The framework enables the specification of preprocessing procedures to be executed before data flows into the Image Transformation stage of the pipeline. Currently the type of preprocessing procedures is limited to realignment using Spatial Transformers (anything that implements the \texttt{SpatialTransformer} interface) and standardization (a.k.a. whitening) of data, but it would be simple to implement additional preprocessing functionality.
+
+\section{Image Transformation}
+
+The framework allows clients to specify which type of image transformation should be included in the pipeline. Currently, the only types of image transformations that are directly implemented in the framework are variants of the Fully Convolutional Net and the U-Net\footnote{RNN-based Flood-Filling Networks may be available soon.}. In general, the Image Transform stage must take a 5-dimensional \texttt{Tensor} (the fundamental datastructure used in \texttt{TensorFlow}) with a shape of [batch-size, z-size, y-size, x-size, num-channels], and outputs a 5-dimensional \texttt{Tensor} with a shape of [batch-size, z-size, y-size, x-size, [1-3]] containing the predictions on the input data. The Image Transform must specify a \texttt{predict} function for inference.
+
+\subsection{Model Definition}
+
+There are only two broad classes of models currently supported: \texttt{ConvNet}(Fully Convolutional Nets), and \texttt{UNet}(U-Nets). However, the framework provides a set of primitives for each classes that allow for concise construction of nets with arbitrary structure, so long as they fit within the general paradigm of these two model types. These architectures are specified by both the \texttt{ConvArchitecture} and the \texttt{UNetArchitecture} classes, and are fed as parameters to the \texttt{ConvNet} and \texttt{UNet} classes for construction and automatic integration into the pipeline.
+
+Particularly useful is that both classes of models automatically calculate the field-of-view of the models, and expose both the input and output shape to the pipeline so that at training time and inference time no extra specification or \texttt{Tensor}-wrangling must occur outside of the models. This means that to modify the architecture of a net, one need only change its respective \texttt{Architecture} specification, and nothing else. An example of an architecture specifcation for the 2-D N4 archetecture can be found below:
+
+\begin{lstlisting}
+N4 = ConvArchitecture(
+    model_name='n4',
+    output_mode=BOUNDARIES,
+    layers=[
+        Conv2DLayer(filter_size=4, n_feature_maps=48, activation_fn=tf.nn.relu, is_valid=True),
+        Pool2DLayer(filter_size=2),
+        Conv2DLayer(filter_size=5, n_feature_maps=48, activation_fn=tf.nn.relu, is_valid=True),
+        Pool2DLayer(filter_size=2),
+        Conv2DLayer(filter_size=4, n_feature_maps=48, activation_fn=tf.nn.relu, is_valid=True),
+        Pool2DLayer(filter_size=2),
+        Conv2DLayer(filter_size=4, n_feature_maps=48, activation_fn=tf.nn.relu, is_valid=True),
+        Pool2DLayer(filter_size=2),
+        Conv2DLayer(filter_size=3, n_feature_maps=200, activation_fn=tf.nn.relu, is_valid=True),
+        Conv2DLayer(filter_size=1, n_feature_maps=1, is_valid=True),
+    ]
+)
+\end{lstlisting}
+
+\subsection{Model Training}
+
+Model training primarily occurs through the \texttt{Learner} class, which creates an optimizer based on a model's specified loss function (typically cross entropy), as well as various parameters specified in \texttt{TrainingParams}. Every step, the \texttt{Learner} feeds a training example from the queue into the model, runs the optimizer for one update step, and executes any number of user-specified \texttt{Hook}s. These hooks will execute every $N$ steps, where $N$ is specified by the user in the hook constructor. Hooks provided include:
+
+\begin{itemize}
+	\item \texttt{LossHook}: Report the loss for the model to \texttt{TensorBoard} every $N$ steps.
+	\item \texttt{ValidationHook}: Run inference on the validation set every $N$ steps, and write both validation scores and image predictions to \texttt{TensorBoard}.
+	\item \texttt{ModelSaverHook}: Save the model variables to disk every $N$steps, so that the model can be reloaded for inference.
+	\item \texttt{HistogramHook}: Write distributions of the values of parameters for each \texttt{TensorFlow} variable to \texttt{TensorBoard} every $N$ steps.
+	\item \texttt{LayerVisualizationHook}: Write visualizations of the various feature maps for different convolutional layers to \texttt{TensorBoard} every $N$ steps.
+\end{itemize}
+
+\section{Postprocessing}
+
+Much like the preprocessing stage, the postprocessing stage of the pipeline allows for arbitrary transformations of the output of the Image Transformation stage. The only two transforms currently included in the framework are:
+
+\begin{itemize}
+	\item Watershed: Given a set of specified parameters, convert a dataset annotated with affinities to a segmentation of the dataset. The current version is implemented in Julia.
+	\item Mean Affinity Agglomeration: Given a segmentation and a set of affinities, greedily merge or split regions based on the affinity continuity along borders of the regions. The current version is also implemented in Julia.
+\end{itemize}
+
+\section{Ensembling}
+
+The framework also enables the use of various ensembling techniques both at training time and at inference time through the \texttt{EnsembleLearner} class. This class allows a group of models to be trained simultaneously, and upon the completion of this training, an ensembling technique can be applied to their outputs for prediction. This ensembling technique can be any arbitrary ensembling method, including learned ensembling techniques that train on the outputs of various models. Currently the framework supports the following ensembling methods:
+
+\begin{itemize}
+	\item \texttt{ModelAverager}: Average the output of several different models. If multiple copies of the same net are trained independently, averaging the outputs reduces the variance of predictions and leads to higher accuracy.
+\end{itemize}
+
+\section{GPU Acceleration and Portability}
+
+Paramount in modern deep learning training is GPU Acceleration. In our experiments, using a GPU accelerated training speeds by factors of 100 or more, which was indispensible in the experimentation process. Because the entire pipeline sits on top of a \texttt{TensorFlow} backend, and \texttt{TensorFlow} automatically optimizes its own internal processing graph for use on GPUs that support \texttt{CUDA}, our framework is GPU-enabled by default.
+
+Because our group did not have a dedicated set of GPU hardware at the beginning of the project, we decided to use the containerization platform Docker, along with some NVIDIA plugins, to enable GPU training on any Linux machine with a GPU. By creating a Docker container that has the entire framework pre-installed, training and inference can be run on any machine that has access to a GPU with minimal setup.
+

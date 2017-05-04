@@ -75,7 +75,7 @@
   \vspace{.6in}
   \extravspace{.6in}
   \begin{center}
-    A Thesis \\
+    An Undergraduate Thesis \\
     Presented to the Faculty \\
     of Princeton University \\
     in Candidacy for the Degree \\
@@ -189,7 +189,7 @@
 % \setlength{\evensidemargin}{.5in} %{.4375in}
 \setlength{\topmargin}{-.5in}  %{-.5625in}
 \setlength{\footskip}{.25in} % to put page number 3/4" from the bottom of the page (1/4" from bottom of body text)
-\setlength{\textheight}{9in}
+\setlength{\textheight}{9.5in}
 \setlength{\textwidth}{6in}
 
 %%% Alter LaTeX defaults to try to eliminate all widows and orphans

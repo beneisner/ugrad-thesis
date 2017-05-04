@@ -80,6 +80,34 @@
 
 \usepackage{geometry}
 
+\usepackage{listings}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
+
 %set parameters for longtable:
 % default caption width is 4in for longtable, but wider for normal tables
 \setlength{\LTcapwidth}{\textwidth}
@@ -235,16 +263,14 @@
 
 % \include lets us split up the document (and each include starts a new page):
 \input{tex/1-intro}
-\input{tex/2-background}
-\input{tex/3-models}
-\input{tex/4-implementation}
-\input{tex/5-training}
-\input{tex/6-evaluation}
-\input{tex/7-results}
-\input{tex/8-conclusion}
-% \appendix % all chapters following will be labeled as appendices
-% \include{ch-appendicies/implementation}
-% \include{ch-appendicies/printing}
+\input{tex/2-deepseg}
+\input{tex/3-2d_segmentation}
+\input{tex/4-3d_segmentation}
+\input{tex/5-alignment}
+\input{tex/6-conclusion}
+
+\appendix % all chapters following will be labeled as appendices
+\input{tex/appendix}
 
 
 % Make the bibliography single spaced

@@ -662,10 +662,27 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/Ben/Documents/Programming/seunglab/slab1000-thesis/ugrad-thesis"
+		"/Users/Ben/Documents/Programming/seunglab/slab1000-thesis/ugrad-thesis",
+		"/Users/Ben/Documents/Programming/seunglab/slab1000-thesis/ugrad-thesis/sty",
+		"/Users/Ben/Documents/Programming/seunglab/slab1000-thesis/ugrad-thesis/tex"
 	],
 	"file_history":
 	[
+		"/Users/Ben/Documents/Programming/seunglab/slab1000-thesis/ugrad-thesis/tex/1-intro.tex",
+		"/Users/Ben/Documents/Programming/seunglab/slab1000-thesis/ugrad-thesis/sty/puthesis.cls",
+		"/Users/Ben/Documents/Programming/seunglab/slab1000-thesis/ugrad-thesis/thesis.sublime-project",
+		"/Users/Ben/Documents/Programming/seunglab/slab1000-thesis/ugrad-thesis/thesis.tex",
+		"/Users/Ben/Documents/Programming/seunglab/slab1000-thesis/ugrad-thesis/.gitignore",
+		"/Users/Ben/Documents/Programming/seunglab/slab1000-thesis/ugrad-thesis/thesis_new.tex",
+		"/Users/Ben/Documents/Programming/seunglab/slab1000-thesis/ugrad-thesis/tex/8-conclusion.tex",
+		"/Users/Ben/Documents/Programming/seunglab/slab1000-thesis/ugrad-thesis/tex/7-results.tex",
+		"/Users/Ben/Documents/Programming/seunglab/slab1000-thesis/ugrad-thesis/tex/6-evaluation.tex",
+		"/Users/Ben/Documents/Programming/seunglab/slab1000-thesis/ugrad-thesis/tex/5-training.tex",
+		"/Users/Ben/Documents/Programming/seunglab/slab1000-thesis/ugrad-thesis/tex/4-implementation.tex",
+		"/Users/Ben/Documents/Programming/seunglab/slab1000-thesis/ugrad-thesis/tex/3-models.tex",
+		"/Users/Ben/Documents/Programming/seunglab/slab1000-thesis/ugrad-thesis/tex/abstract.tex",
+		"/Users/Ben/Documents/Programming/seunglab/slab1000-thesis/ugrad-thesis/tex/2-background.tex",
+		"/Users/Ben/Documents/Programming/seunglab/slab1000-thesis/ugrad-thesis/tex/acknowledgements.tex",
 		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/tex/results.tex",
 		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/tex/evaluation.tex",
 		"/Users/Ben/Google Drive/Research/SeungLab/ugrad-thesis/tex/implementation.tex",
@@ -778,22 +795,7 @@
 		"/Users/Ben/Google Drive/Academics/Junior - Fall/ELE 206/simon/Memory.v",
 		"/Users/Ben/Documents/Programming/relationboat_meteor/client/relationboat_meteor.html",
 		"/Users/Ben/Documents/Programming/relationboat_meteor/relationboat_meteor.js",
-		"/Users/Ben/Documents/Programming/relationboat_meteor/relationboat_meteor.html",
-		"/Users/Ben/Documents/Programming/relationboat/relationboat/urls.py",
-		"/Users/Ben/Documents/Programming/relationboat/relationboat/settings.py",
-		"/Users/Ben/Documents/Programming/HP2015/faceApi.py",
-		"/Users/Ben/Documents/MATLAB/MAE 341/Assignment 2/Q5.m",
-		"/Users/Ben/Documents/MATLAB/MAE 341/Assignment 2/calculateOrbitalElementsRV.m",
-		"/Users/Ben/Documents/MATLAB/MAE 341/Assignment 2/Q3a.m",
-		"/Users/Ben/Documents/MATLAB/MAE 341/Assignment 2/Q4.m",
-		"/Users/Ben/Documents/MATLAB/MAE 341/Assignment 2/Q1.m",
-		"/Users/Ben/Documents/Programming/beneisner.github.io/index.html",
-		"/Users/Ben/Google Drive/Academics/Junior - Fall/ELE 206/lab3/Latch.t.v",
-		"/Users/Ben/Google Drive/Academics/Freshman - Fall/COS 126/Assignment 4/EditDistance.java",
-		"/Users/Ben/Documents/Programming/eth1-hackathon/src/Bot.java",
-		"/Users/Ben/Google Drive/Academics/Junior - Fall/ELE 206/lab0/SimpleCircuit.v",
-		"/Users/Ben/Google Drive/Academics/Junior - Fall/ELE 206/lab0/SimpleCircuit.t.v",
-		"/Volumes/beisner/Assignment1/decomment.c"
+		"/Users/Ben/Documents/Programming/relationboat_meteor/relationboat_meteor.html"
 	],
 	"find":
 	{
@@ -823,6 +825,13 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"margin",
+			"submissions",
+			"flesh",
+			"\\cite",
+			"cite",
+			"abstract",
+			"}",
 			"TODO",
 			"Droposphi",
 			"\\IWreport",
@@ -943,14 +952,7 @@
 			"loop",
 			"args.LastLogTerm",
 			"= make(",
-			"initializeDis",
-			"dispatchChans",
-			"apply error",
-			"heartbeatChan",
-			"Start",
-			"TOO",
-			"TOO DAMN",
-			"Applying entr"
+			"initializeDis"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -958,6 +960,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"~\\c",
+			"~\\cite",
 			"debug",
 			"",
 			"\\n",
@@ -1090,7 +1094,7 @@
 	"project": "thesis.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1117,12 +1121,12 @@
 	},
 	"select_symbol":
 	{
-		"height": 0.0,
+		"height": 392.0,
 		"last_filter": "",
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 392.0
 	},
 	"selected_group": 0,
 	"settings":

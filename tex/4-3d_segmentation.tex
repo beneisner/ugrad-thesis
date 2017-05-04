@@ -1,0 +1,45 @@
+\chapter{3D Segmentation}
+
+In this chapter, we establish the task of 3D Segmentation of EM Images, attempt to train models that perform well on this task, and evaluate our results. The purpose of these experiments is not so much to achieve state-of-the-art performance on the task, but to examine the effect that increasing training data quality and reducing variance in predictions has on model performance.
+
+\section{Task Definition}
+
+The problem of 3D Segmentation is formulated as such: given a stack of 2-dimensional EM images generated that represent a 3-dimensional volume of tissue (i.e. the images were taken of successive physical slices of tissue), produce a segementation\footnote{A segmentation of an image or a stack of images is defined as producing a label for each pixel in the image or stack of images, where each unique label corresponds to a discrete object in the physical volume.} of the set of images that uniquely labels each discrete entity in the original volume. That is, if a tissue volume contains a neuron that passes vertically through several different slices, then the portions of each slice through which the neuron passes would be labeled with the same identifier. This problem is significantly more complicated than the boundary prediction problem stated before, because it requires an awareness of context in 3 dimensions, rather than 2. Additionally, most EM datasets are anisotropic, meaning that the resolution is not uniform in all directions (specifically, the z-direction perpendicular to the plane of each image is generally dilated). An example of a segmentation can be found in Figure \ref{fig:snemi3d_example}.
+
+\begin{figure}[h]
+    \centering
+	\includegraphics[width=0.33\textwidth]{img/snemi3d_raw_example}
+	\hspace{1cm}
+	\includegraphics[width=0.33\textwidth]{img/snemi3d_label_example}
+    \caption[An example of a 2D cross-section of a 3D segmentation]{An example of a 2D cross-section of a 3D segmentation. Left: one of the original images in a stack of images taken with an electron microscope. This particular example is neuron tissue taken from the common mouse in a dataset used in the ISBI 2013 EM segmentation challenge \cite{Kasthuri2015}. The resolution of each pixel is 6nm x 6nm, and each image represents a slice 30nm thick. Right: The ground truth segmentation corresponding to a segmentation of each individual object in the input image, as labeled by human experts. The labels are unique identifiers, although the border deliniation is somewhat arbitrary due to the fact that real applications of boundary detection are invariant to small differences in boundary shapes.}
+    \label{fig:snemi3d_example}
+\end{figure}
+
+Trivially, the complexity of objects in 3 dimensions is potentially much greater than in two dimensions, so it makes sense that any learning method used to train a system that performs segmentation might be adept at certain types of volumetric data, and inept at others. To evaluate methods on different types of volumetric data, we selected two different challenges that provide us with samples of neural tissue that have different geometric properties, not only due to geometric differences in the underlying tissue but also because of differences in sample preparation techniques. These two challenges are the SNEMI3D Segmentation Challenge and the CREMI Segmentation Challenge.
+
+\section{Evaluation Metrics}
+
+Similar to the 2D Segmentation task, the two main evaluation metrics we will use for this task are Rand Error and Pixel Error. Formal definitions of both of these error metrics can be found in Appendix A. 
+
+\begin{itemize}
+\item \textbf{Rand Error}: We will use the Rand Error to determine whether or not the segmentation process correctly labels different cells as different objects. We will also look at the Rand Split Error and the Rand Merge Error, to see where the models inaccurately split and merge different regions.
+\item \textbf{Pixel Error}: We will use the Pixel Error to gauge the efficacy of our models at predicting the intermediate boundary stage.
+\end{itemize}
+
+\section{Models}
+
+\section{Dataset}
+
+For our experiments
+
+The SNEMI3D Segmentation Challenge is a highly active challenge (organized in advance of ISBI 2013), and provides a stack of EM images for training, along with ground truth segmentations of the EM images in 3 dimensions. The challenge website describes the training and testing data as \quotes{stacks of 100 sections from a serial section Scanning Electron Microscopy (ssSEM) data set of mouse cortex. The microcube measures 6 x 6 x 3 microns approx., with a resolution of 6x6x30 nm/pixel}\cite{Arganda-Carreras2013}. Like the ISBI 2012 dataset, the SNEMI3D dataset is anisotropic, and particularly dilated in the z-direction. Additionally, the data is from mouse cortex, rather than from \textit{Droposphilia}, and the geometry of the tissue is significantly different. \TODO{Discuss our submissions to this leaderboard.}
+
+The Circuit Reconstruction from Electron Microscopy Images (CREMI) Challenge is a somewhat less-active challenge organized in advance of MICCAI 2016\cite{Funke.Jan2016}. The challenge provides three datasets for training, all of which are volumetric samples of \textit{Drosophila melanogaster}. The training and testing data are stacks of 125 sections from an ssSEM data set, with each slice having a resolution of 4x4x40nm/pixel. These datases are also anisotropic, being dilated in the z-direction. Furthermore, the types of neurons sampled are quite diverse between datasets: from visual inspection, some of the neurites in one of the datasets is much thinner than those in the others, suggesting that models might perform differently when trained/tested on these different datasets. Finally, these datasets are quite a bit noisier than ISBI or SNEMI3D: there are many more major misalignments, many patches of blur, and some slices are missing entirely. These datasets will provide a good measure of how robust our methods are to noise in volumetric data. \TODO{Discuss our submissions to this leaderboard.}
+
+\section{Training}
+
+\TODO{Talk about splits}
+
+\section{Results}
+
+\section{Discussion}
