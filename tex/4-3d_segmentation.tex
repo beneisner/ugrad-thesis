@@ -72,3 +72,85 @@ where $\sigma$ is the sigmoid function, $\bm{x}$ is the prediction, and $\bm{y}$
 At each step, we executed one iteration of optimization using the Adam Optimizer, and ever 100 steps we made predictions on the validation set to see how well the model generalized.
 
 \section{Results}
+
+
+\begin{table}
+	\centering
+	\caption{Results of 3D Segmentation on various datasets}
+	\subcaption*{SNEMI3D} 
+	\input{tex/tables/3d_snemi_results} 
+
+	\subcaption*{CREMI A} 
+	\input{tex/tables/3d_cremi_a_results} 
+
+	\subcaption*{CREMI B} 
+	\input{tex/tables/3d_cremi_b_results} 
+
+	\subcaption*{CREMI C} 
+	\input{tex/tables/3d_cremi_c_results} 
+	
+	\label{tab:3d_results}
+\end{table}
+
+\begin{figure}
+\centering
+\textbf{SNEMI3D} \\
+\textbf{Rand Index}
+\includegraphics[width=\textwidth]{img/snemi_rand.png} \\
+\textbf{Pixel Error}
+\includegraphics[width=\textwidth]{img/snemi_px_err.png}
+
+\caption[Training curves for 3D segmentation for SNEMI3D]{Training curves, smoothed, for 3D segmentation. Top: The full Rand scores on the SNEMI3D validation set (from top: VD2D-3D, UVR-Net). Bottom: The pixel error on the SNEMI3D validation set (from top: VD2D-3D, UVR-Net). The sharp dip in the Rand Score for the UVR-Net was due to a small parameter change in validation procedure that was quickly reverted.}
+\label{fig:snemi_training_curves}
+
+\end{figure}
+
+\begin{figure}
+\centering
+\textbf{CREMI A} \\
+\textbf{Rand Index}
+\includegraphics[width=\textwidth]{img/cremi_a_rand.png} \\
+\textbf{Pixel Error}
+\includegraphics[width=\textwidth]{img/cremi_a_px_err.png}
+
+\caption[Training curves for 3D segmentation for CREMI A]{Training curves, smoothed, for 3D segmentation. Top: The full Rand scores on the CREMI A validation set (from top: UVR-Net, VD2D-3D). Bottom: The pixel error on the CREMI A validation set (from top: VD2D-3D, UVR-Net).}
+\label{fig:cremi_a_training_curves}
+
+\end{figure}
+
+\begin{figure}
+\centering
+\textbf{CREMI B} \\
+\textbf{Rand Index}
+\includegraphics[width=\textwidth]{img/cremi_b_rand.png} \\
+\textbf{Pixel Error}
+\includegraphics[width=\textwidth]{img/cremi_b_px_err.png}
+
+\caption[Training curves for 3D segmentation for CREMI B]{Training curves, smoothed, for 3D segmentation. Top: The full Rand scores on the CREMI B validation set (from top: VD2D-3D, UVR-Net). Bottom: The pixel error on the CREMI B validation set (from top: VD2D-3D, UVR-Net).}
+\label{fig:cremi_b_training_curves}
+
+\end{figure}
+
+\begin{figure}
+\centering
+\textbf{CREMI C} \\
+\textbf{Rand Index}
+\includegraphics[width=\textwidth]{img/cremi_c_rand.png} \\
+\textbf{Pixel Error}
+\includegraphics[width=\textwidth]{img/cremi_c_px_err.png}
+
+\caption[Training curves for 3D segmentation for CREMI C]{Training curves, smoothed, for 3D segmentation. Top: The full Rand scores on the CREMI C validation set (from top: UVR-Net, VD2D-3D (barely pictured)). Bottom: The pixel error on the CREMI C validation set (from top: VD2D-3D, UVR-Net). The absurdly low Rand score for the VD2D-3D model might be a bit misleading; it is possible that there was a training fluke for this iteration.}
+\label{fig:cremi_c_training_curves}
+
+\end{figure}
+
+
+After training, we run prediction on the validation sets for each dataset (since we don't have labels for the test set) to determine their performance. Results are numerically summarized in Table \ref{tab:3d_results}. The training graphs documenting Rand Score and Pixel Error for models training on SNEMI3D, CREMI A, CREMI B, and CREMI C can be found in Figures \ref{fig:snemi_training_curves}, \ref{fig:cremi_a_training_curves}, \ref{fig:cremi_b_training_curves}, and \ref{fig:cremi_c_training_curves}, respectively. 
+
+We can draw several conclusions about the qualities that these models have when trained on these datasets. First, it is patently obvious that there is large variation in the training process. Sometimes, the models would train quite quickly; sometimes, they wouldn't train appropriately (in the case of VD2D-3D on CREMI C). If we were to repeat this study, we would likely train each model on each dataset multiple times with the same parameters, and take the best performing model from each set of runs. 
+
+Second, in every setting the UVR-Net outperforms the VD2D-3D net in Pixel Error; UVR-Net consistently has substantially lower pixel error than VD2D-3D, by about the same margin in every trial. This suggests that the residual layers and skip connections built into the architecture are doing their jobs, and are reconstructing images that look a lot like the input (an affinity map should look quite like the boundaries of the input). 
+
+Thrid, the quality of the data significantly affects the performance of these models. While some of the differences in scores can be attributed to variance in the training of the model, during the experimentation process (before results generation) it became clear that models would perform differently on different datasets. From this, we can draw the conclusion that certain datasets are "harder" than others to learn segmentatons from. What makes one dataset "harder" than another? 
+
+In the SNEMI3D dataset, for instance, many of the objects are significantly thinner and extend longer distances across the EM slices than in the other datasets. Data quality can make a huge difference as well. The three different CREMI datasets, although taken from the same biological sample and imaged with the same process, have different properties in terms of stack quality. Visually looking at each layer of the CREMI stacks, the quality of the images varies greatly. Some of the CREMI datasets have significantly more blurred slices than others; the same goes for blemishes and cracks. CREMI C is missing a slice entirely. Individual slice artifacts may have a small impact on final metrics, but it is likely that only dataset errors affecting many slices across a dataset will have significant impact on the Rand Score of predictions. The most obvious culprit between the CREMI datasets is alignment. All three datasets are poorly aligned across the entire stack, but in terms of alignment CREMI A is worse than CREMI B and CREMI C. The Rand scores on CREMI A were also lower across all models than the other CREMI datasets. While this is not concrete evidence that the models are quite susceptible to error on poorly aligned datasets, the correlation certainly suggests that improving alignment procedures for EM datasets, or even building explicit alignment layers into models might produce better results across diverse datasets.

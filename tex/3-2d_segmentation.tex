@@ -31,7 +31,7 @@ The two main evaluation metrics we will use for this task are Rand Score and Pix
 We define two models - both closely resembling models from the literature -  with which we will run experiments:
 
 \begin{itemize}
-\item \textbf{N4} The N4 Architecture is a standard, fully-convolutional network. We use an identical architecture to the architecture outlined in the original N4 paper\cite{Cirean}. The architecture uses comparatively fewer convolutions, each with comparatively larger filter sizes. The number of feature maps stays the same throughout the net, and ends with a fully connected layer to predict an output pixel with a sigmoid function. Intermediate non-linearities are ReLU. Given a large enough input, an entire output patch can be predicted pixel-by-pixel. The effective field-of-view for each pixel in the output is a 95 pixel square in the input image.
+\item \textbf{N4}: The N4 Architecture is a standard, fully-convolutional network. We use an identical architecture to the architecture outlined in the original N4 paper\cite{Cirean}. The architecture uses comparatively fewer convolutions, each with comparatively larger filter sizes. The number of feature maps stays the same throughout the net, and ends with a fully connected layer to predict an output pixel with a sigmoid function. Intermediate non-linearities are ReLU. Given a large enough input, an entire output patch can be predicted pixel-by-pixel. The effective field-of-view for each pixel in the output is a 95 pixel square in the input image.
 
 \begin{figure}[h]
 \centering
@@ -40,7 +40,7 @@ We define two models - both closely resembling models from the literature -  wit
 \label{fig:n4}
 \end{figure}
 
-\item \textbf{VD2D} The VD2D Architecture is also a standard, fully-convolutional network, and is nearly identical to the architecture originally used in the VD2D paper\cite{Lee}. By comparison, the VD2D architecture is deeper than N4, and uses more successive layers with smaller convolutional filters. Activations are ReLU, and the output is a pixel affinity. The effective field of view for each pixel in the output is a 109 pixel square in the input image.
+\item \textbf{VD2D}: The VD2D Architecture is also a standard, fully-convolutional network, and is nearly identical to the architecture originally used in the VD2D paper\cite{Lee}. By comparison, the VD2D architecture is deeper than N4, and uses more successive layers with smaller convolutional filters. Activations are ReLU, and the output is a pixel affinity. The effective field of view for each pixel in the output is a 109 pixel square in the input image.
 
 \begin{figure}[h]
 \centering
@@ -78,8 +78,6 @@ We made five different training runs using different parameters:
 
 \section{Results}
 
-After training, we run the trained models on the validation set (since we don't have labels for the test set) to determine their performance. Results are numerically summarized in Table \ref{tab:2d_results}, and graphs of Rand Score and Pixel Error on the validation set over the course of training are displayed in Figure \ref{fig:2d_training_curves}. Of the two models, VD2D generally performed better than N4, models trained with augmentation performed much better than those trained without, and the ensembled VD2D performed the best out of all training runs in terms of Rand Full Score.
-
 \begin{table}
 \centering
 	\input{tex/tables/2d_aug_results}
@@ -93,9 +91,12 @@ After training, we run the trained models on the validation set (since we don't 
 \includegraphics[width=\textwidth]{img/2d_rand.png} \\
 \textbf{Pixel Error}
 \includegraphics[width=\textwidth]{img/2d_pixel.png}
-\label{fig:2d_training_curves}
+
 \caption[Training curves for 2D segmentation]{Training curves, smoothed, for 2D segmentation. Top: The full Rand scores on the validation set (from top: VD2D, N4, VD2D w/o augmentation, N4 w/o augmentation). Bottom: The pixel error on the validation set (from top: N4 w/o augmentation, VD2D w/o augmentation, N4, VD2D).}
+\label{fig:2d_training_curves}
 
 \end{figure}
+
+After training, we run the trained models on the validation set (since we don't have labels for the test set) to determine their performance. Results are numerically summarized in Table \ref{tab:2d_results}, and graphs of Rand Score and Pixel Error on the validation set over the course of training are displayed in Figure \ref{fig:2d_training_curves}. Of the two models, VD2D generally performed better than N4, models trained with augmentation performed much better than those trained without, and the ensembled VD2D performed the best out of all training runs in terms of Rand Full Score.
 
 Based on these results, we can draw three major conclusions. First, augmentation is extremely important in the training process. As the two graphs in Figure \ref{fig:2d_training_curves} demonstrate, models without random data augmentation learn for a short time, but they quickly begin to overfit, resulting in very poor generalization performance later on (even though the loss function continues to decrease). Second, we find that deeper nets can outperform shallower nets, since the deeper VD2D net outperforms the N4 architecture, which is a finding consistent with results of others who have used deep learning in segmentation tasks. Finally, we can conclude that these sorts of nets have a significant amount of variance in their predictions; by using ensembling methods we can reduce the variance between predictions, and thereby achieve higher performance. In later sections, we will explore further how training data quality affects training performance.
