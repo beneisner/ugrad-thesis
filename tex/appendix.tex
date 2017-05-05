@@ -1,9 +1,40 @@
 \chapter{Metric Definitions}
-\section{Rand Error}
-\section{Cross Correlation}
-\subsection{Smoothed Version}
-\section{Pixel Error}
 
-\chapter{Theoretical Background}
-\section{Convolutional Neural Nets}
-\section{Optimization}
+\section{Pixel Error}
+Given two images, pixel error is defined as the mean of the absolute numerical distance between corresponding pixels in both images. Formally, we define:
+
+$$P(X, Y) = \frac{\sum_{\bm{i} \in S}{|X_{\bm{i}} - Y_{\bm{i}}|}}{|S|}$$
+for tensors $X$ and $Y$ over all indexes $\bm{i}$ in the index space $S$ for tensors $X$ and $Y$.
+
+\section{Rand Score}
+
+The version of the Rand Score used in this thesis is the Rand F Score. The Rand F Score essentially counts all the non-distinct pairs in an image that are correctly labeled as belonging to the same or different grouping with respect to a reference image. Formally, we define $S_1, S_2, ... S_n \subseteq S$ to be the set of all groupings $S_i$ in an input volume (i.e. distinct labels in a segmentation)m and $T_1, T_2, ... T_n \subseteq T$ to be the set of all groupings $T_i$ in a ground-truth volume. Let:
+
+$$ t_i = |T_i| $$
+$$ s_i = |S_i| $$
+$$ c_{i,j} = |S_i \cap T_j| $$
+
+Then, the Rand F Score can be defined as:
+
+$$R_{\mathsf{Full}}(S,T) = \frac{\sum_{i,j}{c_{i,j}}}{\alpha \sum_{i}{s_i^2} + (1 - \alpha)\sum_j{t_i^2}}$$ 
+
+$$R_{\mathsf{Merge}}(S,T) = \frac{\sum_{i,j}{c_{i,j}}}{\sum_{i}{s_i^2}}$$  
+
+$$R_{\mathsf{Split}}(S,T) = \frac{\sum_{i,j}{c_{i,j}}}{\sum_{j}{t_j^2}}$$  
+
+
+where $N$ is the number of voxels in a volume. See \url{https://github.com/seung-lab/segascorus/blob/master/segerror-manual.pdf} for more details of the Rand F Score.
+
+\section{Cross Correlation}
+
+Given two images, cross-correlation is defined as the mean of the prodiuct of corresponding pixels in both images. Formally, we define:
+
+$$C(X, Y) = \frac{\sum_{\bm{i} \in S}{|X_{\bm{i}} \times Y_{\bm{i}}|}}{|S|}$$
+for tensors $X$ and $Y$ over all indexes $\bm{i}$ in the index space $S$ for tensors $X$ and $Y$.
+
+\subsection{Smoothed Version}
+
+Because standard Cross Correlation is not particularly continuous (i.e. two images will typically be highly correlated if they match exactly, and loosely correlated if they are translated or rotated), we define a somewhat more smoothed version that attempts to make the function more continuous. We define the function:
+
+$$C_s(X, Y) = \frac{\sum_{\bm{i} \in S}{|X_{\bm{i}} \times (G_{\theta}(Y))_{\bm{i}}|}}{|S|}$$
+for tensors $X$ and $Y$ over all indexes $\bm{i}$ in the index space $S$ for tensors $X$ and $Y$. The function $G_{\theta}(\cdot)$ is a smoothing function, which applies a Gaussian filter to its arguments based on parameters $\theta$. The amount of smoothing that occurs determines how dontinuous the smoothed cross-correlation function is. Because the continuity of this function can be controlled, it makes for a more-useful loss function than standard Cross Correlation.

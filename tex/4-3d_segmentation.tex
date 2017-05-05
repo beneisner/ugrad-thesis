@@ -19,27 +19,56 @@ Trivially, the complexity of objects in 3 dimensions is potentially much greater
 
 \section{Evaluation Metrics}
 
-Similar to the 2D Segmentation task, the two main evaluation metrics we will use for this task are Rand Error and Pixel Error. Formal definitions of both of these error metrics can be found in Appendix A. 
+Similar to the 2D Segmentation task, the two main evaluation metrics we will use for this task are Rand Score and Pixel Error. Formal definitions of both of these error metrics can be found in Appendix A. 
 
 \begin{itemize}
-\item \textbf{Rand Error}: We will use the Rand Error to determine whether or not the segmentation process correctly labels different cells as different objects. We will also look at the Rand Split Error and the Rand Merge Error, to see where the models inaccurately split and merge different regions.
+\item \textbf{Rand Score}: We will use the Rand Score to determine whether or not the segmentation process correctly labels different cells as different objects. We will also look at the Rand Split Score and the Rand Merge Score, to see where the models inaccurately split and merge different regions.
 \item \textbf{Pixel Error}: We will use the Pixel Error to gauge the efficacy of our models at predicting the intermediate boundary stage.
 \end{itemize}
 
 \section{Models}
 
+We define two models for experimentation:
+
+\begin{itemize}
+	\item \textbf{VD2D-3D}: The VD2D-3D implemented for this experiment is close to the one published by Lee et. al.\cite{Lee}. It is a standard, fully-convolutional architecture that consists of two computational stages. The first stage of the net computes a series of 2D convolutions and poolings on each slice of a given sample stack, and the second stage computes a series of 3D convolutions and poolings on the entire stack. Intermediate nonlinearities are ReLU. Because the dataset is anisotropic, the effective field of view in the z direction is much smaller than in the x and y direction in terms of pixels, which is achieved through fewer z-dimensional poolings and smaller z-dimensional convolutions. The model predicts a set of 3 affinities (x, y, z) for each pixel. The effective field of view is a 85 pixel square in the x-y plane, and 7 pixels in the z direction.
+
+	\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/VD2D_3D.png}
+	\caption{The VD2D-3D architecture for 3D Segmentation.}
+	\label{fig:vd2d_3d}
+	\end{figure}
+
+	\item \textbf{UVR-Net}: The UVR-Net borrows concepts from the U-Net, V-Net, and Residual Nets, and is an architecture that all members of our group contributed to\cite{Ronneberger2015,He2015,Milletari2016,Cicek2016}. The structure consists of 4 "U Layers", which are pairs of down-convolutions and up-convolutions. The output of the down-convolutions skips across the net, and is concatenated to the input of the corresponding up-convolutional component (the number of feature maps of the first convolution in each "U Layer" is twice the subsequent ones). We add residual connections that skip the convolutions from the output of pooling layers, and add skip connections across the "U-Layer". After each convolution, we apply ReLU nonlinearities, except between convolutions and additions with residual connections. These modifications are all added to attempt to make the net learn first by predicting an output that looks similar to the input, and slowly eroding elements until an affinity map is left.
+
+	\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/U-Net_3D.png}
+	\caption{The UVR-Net architecture for 3D Segmentation}
+	\label{fig:uvr-net}
+	\end{figure}
+\end{itemize}
+
 \section{Dataset}
 
-For our experiments
+We will train and experiment on (4) 3D EM Datasets, taken from two different competitons: SNEMI3D and CREMI. We evaluate on 4 datasets instead of 1 to discuss the shortcomings of these models, and how training on different types of data affect performance.
 
-The SNEMI3D Segmentation Challenge is a highly active challenge (organized in advance of ISBI 2013), and provides a stack of EM images for training, along with ground truth segmentations of the EM images in 3 dimensions. The challenge website describes the training and testing data as \quotes{stacks of 100 sections from a serial section Scanning Electron Microscopy (ssSEM) data set of mouse cortex. The microcube measures 6 x 6 x 3 microns approx., with a resolution of 6x6x30 nm/pixel}\cite{Arganda-Carreras2013}. Like the ISBI 2012 dataset, the SNEMI3D dataset is anisotropic, and particularly dilated in the z-direction. Additionally, the data is from mouse cortex, rather than from \textit{Droposphilia}, and the geometry of the tissue is significantly different. \TODO{Discuss our submissions to this leaderboard.}
+The SNEMI3D Segmentation Challenge is a highly active 3D segmentation challenge (organized in advance of ISBI 2013), and provides a stack of EM images for training, along with ground truth segmentations of the EM images in 3 dimensions. The challenge website describes the training and testing data as \quotes{stacks of 100 sections from a serial section Scanning Electron Microscopy (ssSEM) data set of mouse cortex. The microcube measures 6 x 6 x 3 microns approx., with a resolution of 6x6x30 nm/pixel}\cite{Arganda-Carreras2013}. Like the ISBI 2012 dataset, the SNEMI3D dataset is anisotropic, and particularly dilated in the z-direction. Additionally, the data is from mouse cortex, rather than from \textit{Droposphilia}, and the geometry of the tissue is significantly different. 
 
-The Circuit Reconstruction from Electron Microscopy Images (CREMI) Challenge is a somewhat less-active challenge organized in advance of MICCAI 2016\cite{Funke.Jan2016}. The challenge provides three datasets for training, all of which are volumetric samples of \textit{Drosophila melanogaster}. The training and testing data are stacks of 125 sections from an ssSEM data set, with each slice having a resolution of 4x4x40nm/pixel. These datases are also anisotropic, being dilated in the z-direction. Furthermore, the types of neurons sampled are quite diverse between datasets: from visual inspection, some of the neurites in one of the datasets is much thinner than those in the others, suggesting that models might perform differently when trained/tested on these different datasets. Finally, these datasets are quite a bit noisier than ISBI or SNEMI3D: there are many more major misalignments, many patches of blur, and some slices are missing entirely. These datasets will provide a good measure of how robust our methods are to noise in volumetric data. \TODO{Discuss our submissions to this leaderboard.}
+The SNEMI3D dataset comes with a train and a test set, both of which consist of (100) 1024x1024 pixel images. The train set includes a set of labels, which represent a segmentation of the bodies in the stack. Since the test set does not include such a segmentation, we create a validation set of 25 images (25\%) which we will use to evaluate the performance of our models.
+
+The Circuit Reconstruction from Electron Microscopy Images (CREMI) Challenge is a somewhat less-active challenge organized in advance of MICCAI 2016\cite{Funke.Jan2016}. The challenge provides three datasets for training, all of which are volumetric samples of \textit{Drosophila melanogaster}. The training and testing data are stacks of 125 sections from an ssSEM data set, with each slice having a resolution of 4x4x40nm/pixel. These datases are also anisotropic, being dilated in the z-direction. Furthermore, the types of neurons sampled are quite diverse between datasets: from visual inspection, some of the neurites in one of the datasets is much thinner than those in the others, suggesting that models might perform differently when trained/tested on these different datasets. Finally, these datasets are quite a bit noisier than ISBI or SNEMI3D: there are many more major misalignments, many patches of blur, and some slices are missing entirely. These datasets will provide a good measure of how robust our methods are to noise in volumetric data.
+
+The three CREMI datasets (labeled CREMI A, CREMI B, and CREMI C) contain train and test sets, each of which consist of (125) 1250x1250 pixel images. The train set includes a set of labels, which represent a segmentation of the bodies in the stack. Like SNEMI3D, the test sets don't include segmentaitons, so we create validation sets from the training sets by witholding 25 slices (20\%) from each for evaluation of model performance.
 
 \section{Training}
 
-\TODO{Talk about splits}
+We train each model on each of the datasets, for a total of 8 training runs. Training was performed on a NVIDIA Titan X. We trained each net for 30000 iterations, sampling volumetric sections from each dataset that were 16 slices thick. For every model, we sought to minimize the cross entropy between the predicted affinities and the true afinnity labels, defining our loss function as:
+
+$$\mathcal{L}(\bm{x}, \bm{y}) =-\log(\sigma(\bm{y}^{T}\bm{x}-(1-\bm{y}^{T})\bm{x}))$$
+where $\sigma$ is the sigmoid function, $\bm{x}$ is the prediction, and $\bm{y}$ are the true affinites.
+
+At each step, we executed one iteration of optimization using the Adam Optimizer, and ever 100 steps we made predictions on the validation set to see how well the model generalized.
 
 \section{Results}
-
-\section{Discussion}

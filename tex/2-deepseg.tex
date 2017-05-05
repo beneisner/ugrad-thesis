@@ -9,7 +9,7 @@ As our research group started building and modifying software to experiment with
 	\item to be completely portable accross different machines and host environments, and to automatically integrate with installed GPU hardware for training acceleration.
 \end{itemize}
 
-On the technical level, the DeepSeg is written in \texttt{Python} (with some \texttt{Julia} and \texttt{C++} tools), and uses the \texttt{NumPy} package to represent and manipulate data throughout the pipeline. All of the machine-learning components, particularly for model definition and training, are built on top of the TensorFlow, Google's popular, open-source deep learning framework. This was chosen because of its ease of use with \texttt{Python}, its flexibility, and its automatic integration with GPUs via \texttt{CUDA}.
+On the technical level, the DeepSeg is written in \texttt{Python} (with some \texttt{Julia} and \texttt{C++} tools), and uses the \texttt{NumPy} package to represent and manipulate data throughout the pipeline. All of the machine-learning components, particularly for model definition and training, are built on top of the TensorFlow, Google's popular, open-source deep learning framework\cite{Abadi}. This was chosen because of its ease of use with \texttt{Python}, its flexibility, and its automatic integration with GPUs via \texttt{CUDA}.
 
 In the following subsections, we will describe the abstractions introduced in the DeepSeg framework, and some of the underlying implementation details of these abstractions.
 
